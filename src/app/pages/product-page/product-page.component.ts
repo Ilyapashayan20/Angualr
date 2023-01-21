@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { IProduct } from './moduls/product';
-import { ModalService } from './services/modal.service';
-import { ProductsService } from './services/products.service';
+import { IProduct } from 'src/app/moduls/product';
+import { ModalService } from 'src/app/services/modal.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-product-page',
+  templateUrl: './product-page.component.html',
+  styleUrls: ['./product-page.component.scss']
 })
-export class AppComponent implements OnInit {
-  
+export class ProductPageComponent implements OnInit {
   title = 'Angular App';
 
   // products: IProduct[] = []
@@ -35,7 +34,4 @@ export class AppComponent implements OnInit {
       this.loading = false
     })
     }
-  }
-
-
-
+}

@@ -12,5 +12,12 @@
     <p *ngIf="loading" class="text-center text-lg">Loading...</p>
 
 
-    <app-product  *ngFor="let product of products$ | async" [product]="product"/>
+    <div *ngIf="productsService.products">
+      <app-product  *ngFor="let product of productsService.products| filterProducts: term; let i = index" [product]="product"/>
+    </div>
+
+    <app-modal *ngIf="modalService.isVisible$ | async" title="Create New Product">
+      <app-create-product />
+    </app-modal>
+    <button (click)="modalService.open()" class=" rounded-full bg-red-600 text-white fixed right-5  bottom-5 px-4 py-2">+</button>
 </div>
